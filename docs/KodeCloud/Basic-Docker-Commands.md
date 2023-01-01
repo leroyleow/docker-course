@@ -1,11 +1,27 @@
 # Basic Docker Commands
 
+## RUN Command
+
 <b>RUN</b> - Start a Container
 
 if docker can't find the image locally, it pull from docker hub. This is done for first time
 ```
 docker run nginx
+docker run nginx:4.0 
 ```
+
+<b>RUN -STDIN</b>
+```
+docker run -it <container_name> -> -i run interactive mode, -t run to attach to terminal
+```
+
+<b>RUN - PORT mapping</b>
+172.17.0.2 is the default that docker assigned. It is a internal ip.
+![sc2](../imgs/sc2.JPG)
+
+<b>RUN -Volumn mapping</b>
+The intent is to persist data in the event container is deleted , data is still there.
+![sc3.jpg](../imgs/sc3.JPG)
 
 <b>RUN</b> - attach and detach
 ```
@@ -15,6 +31,12 @@ docker attach <container_id> -> attach to forground
 
 ```
 [More info on RUN](https://docs.docker.com/engine/reference/commandline/run/)
+
+<b>INSPECT</b>
+Command inspect the docker container such ip adress etc
+```
+docker inspect <container_name>
+```
 
 <b>PS</b> - list containers
 
