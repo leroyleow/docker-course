@@ -8,6 +8,7 @@ if docker can't find the image locally, it pull from docker hub. This is done fo
 ```
 docker run nginx
 docker run nginx:4.0 
+docker run --name mynginx nginx:4.0
 ```
 
 <b>RUN -STDIN</b>
@@ -92,4 +93,3 @@ doccker run ubuntu sleep 5
 ```
 docker exec <container_name> cat /etc/hosts
 ```
-
