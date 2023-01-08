@@ -34,10 +34,15 @@ Docker uses cgroups to limit the system resources.
 
 
 ## Resources
-* https://shekhargulati.com/2019/01/03/how-docker-uses-cgroups-to-set-resource-limits/
+
 * https://docs.docker.com/engine/
 * https://docs.docker.com/engine/api/
 * https://docs.docker.com/config/containers/runmetrics/#control-groups
 * https://dockerlabs.collabnix.com/advanced/security/cgroups/
+* https://shekhargulati.com/2019/01/03/how-docker-uses-cgroups-to-set-resource-limits/
 * https://dockerlabs.collabnix.com/ -> docker labs from basic to advance
+* https://docs.docker.com/storage/
+* https://docs.docker.com/storage/storagedriver/
+
+
 
