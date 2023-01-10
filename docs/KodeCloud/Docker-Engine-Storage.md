@@ -1,4 +1,4 @@
-# Docker Engine & Docker Storage
+# Docker Engine & Docker Storage & Docker Network
 The Docker architecture consists of a Docker daemon, a REST API, and a command-line interface (CLI).
 
 The Docker daemon (also called the Docker engine) is a background process that runs on a host machine and manages the containers. The Docker daemon listens for API requests and manages the containers, images, and networks.
@@ -40,6 +40,26 @@ Solution: Add persistence volume to container (Volume Mounting)
 1. Step1 -> Create Volumn
 2. Step2 -> attach volume to container. If volume not created during run, Docker will create and mount
 ![sc19](/docs/imgs/sc19b.jpg)
+
+## Docker Network
+When install Docker create 3 network automatically, Bridge [default], none, host.
+run <b>docker network ls</b> to identify the number of networks that exist on this system. Run <b>docker inspect inspect bridge</b> to inspect the subnet configured on bridge network
+
+![20](/docs/imgs/sc20.jpg)
+
+### Example 
+![21](/docs/imgs/sc21.jpg)
+
+### Example
+To create a new network named wp-mysql-network using bridge driver. Allocate subnet 182.18.0.1/24. Configure Gateway 182.18.0.1
+```
+$ docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network
+$ docker network inspect wp-mysql-network
+```
+
+### Embedded DNS
+
+![sc22](/docs/imgs/sc22.jpg)
 
 ## Resources
 
