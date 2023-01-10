@@ -31,7 +31,15 @@ The cgroups works by dividing resources into groups and then assigning tasks to 
 Docker uses cgroups to limit the system resources.
 
 ## Docker Storage
+How does Docker stored the files of an image and a container. In following example, since the 1st 3 layers are the same, Dockers can reused it. Docker files are stored in <b>/var/lib/docker</b>
+![sc17](/docs/imgs/sc17.jpg)
+Container layer is read / write, but data is not persist when container exit. Image layer is read only
+![sc18](/docs/imgs/sc18.jpg)
 
+Solution: Add persistence volume to container (Volume Mounting)
+1. Step1 -> Create Volumn
+2. Step2 -> attach volume to container. If volume not created during run, Docker will create and mount
+![sc19](/docs/imgs/sc19b.jpg)
 
 ## Resources
 
