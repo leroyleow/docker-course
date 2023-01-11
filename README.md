@@ -32,3 +32,4 @@ Also learn about Docker Compose, Docker Swarm, and Kubernetes which will help ta
     - [Create-Docker-Iamges](/docs/KodeCloud/Create-Docker-Images.md)
     - [Docker-Compose](/docs/KodeCloud/Docker-Compose.md)
     - [Docker-Engine-Docker-Storage-Networking](/docs/KodeCloud/Docker-Engine-Storage.md)
+    - [Docker-Registry](/docs/KodeCloud/Docker-Registry.md)
