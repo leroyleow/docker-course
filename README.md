@@ -28,9 +28,18 @@ Also learn about Docker Compose, Docker Swarm, and Kubernetes which will help ta
   - [Docker-Security](docs/Section03/Docker-Security.md)
   - [Docker-Workflows](docs/Section03/Docker-Workflow.md)
 - [KodeCloud](docs/KodeCloud/)
+<<<<<<< HEAD
   - [Docker-For_Beginners](docs/KodeCloud/Docker-for-Beginners.pdf)
   - [Basic-Docker-Commands](docs/KodeCloud/Basic-Docker-Commands.md)
   - [Create-Docker-Iamges](/docs/KodeCloud/Create-Docker-Images.md)
   - [Docker-Compose](/docs/KodeCloud/Docker-Compose.md)
   - [Docker-Engine-Docker-Storage-Networking](/docs/KodeCloud/Docker-Engine-Storage.md)
   - [Container-Orchestration](/docs/KodeCloud/Container-Orchestration.md)
+=======
+    - [Docker-For_Beginners](docs/KodeCloud/Docker-for-Beginners.pdf)
+    - [Basic-Docker-Commands](docs/KodeCloud/Basic-Docker-Commands.md)
+    - [Create-Docker-Iamges](/docs/KodeCloud/Create-Docker-Images.md)
+    - [Docker-Compose](/docs/KodeCloud/Docker-Compose.md)
+    - [Docker-Engine-Docker-Storage-Networking](/docs/KodeCloud/Docker-Engine-Storage.md)
+    - [Docker-Registry](/docs/KodeCloud/Docker-Registry.md)
+>>>>>>> 0e22b9831530724b149b6f8c3d73e2a1c35252f7

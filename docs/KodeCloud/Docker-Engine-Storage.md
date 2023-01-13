@@ -55,6 +55,7 @@ To create a new network named wp-mysql-network using bridge driver. Allocate sub
 ```
 $ docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 wp-mysql-network
 $ docker network inspect wp-mysql-network
+$ docker run --network=wp-mysql-network -e DB_Host=mysql-db -e DB_Password=db_pass123 -p 38080:8080 --name webapp --link mysql-db:mysql-db -d kodekloud/simple-webapp-mysql
 ```
 
 ### Embedded DNS
