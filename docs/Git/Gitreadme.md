@@ -10,6 +10,8 @@
 
 git pull <alias:origin> <branch:master>
 
+In the branch, if want to get specific commit, type "git cherry-pick <git hash>"
+
 ## Fork
 ### What is Fork?
 In Git, a fork is a copy of a repository. It allows you to create a new repository based on the code of an existing repository, but with the ability to make changes without affecting the original repository. This is commonly used for open-source projects, where developers can fork the main repository, make changes, and then submit a pull request to have their changes merged into the main repository
