@@ -8,9 +8,25 @@
 ## Git Cheatsheet
 ![Git Cheatsheet](/docs/imgs/Git%20cheat%20sheet%20light%20(FINAL).jpg)
 
+![Git Cheatsheet2](/docs/imgs/git02.jpg)
+
+The following command pull from origin alias, which refers to a conneciton. 
 git pull <alias:origin> <branch:master>
 
 In the branch, if want to get specific commit, type "git cherry-pick <git hash>"
+
+Following command to reset back 1 step while keep the changes
+```
+$ git reset --soft HEAD~1
+```
+
+Following command to reset back 1 step and discard changes
+```
+$ git reset --hard HEAD~1
+```
+
+
+
 
 ## Fork
 ### What is Fork?
@@ -28,3 +44,4 @@ Once the pull request is accepted and merged, the changes made in the fork will 
 It's a common practice in open source projects, where contributors fork the main repository, make changes, and then submit a pull request to have their changes merged into the main repository.
 
 ![git-fork](/docs/imgs/git01.JPG)
+
