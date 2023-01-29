@@ -60,6 +60,12 @@ docker rm <container_name>
 docker ps -> to verify container remove
 ```
 
+<b>PRUNE</b>
+To remove dangling images locally
+```
+docker image prune -a
+```
+
 <b>IMAGES</b> - List Images
 ```
 docker images
