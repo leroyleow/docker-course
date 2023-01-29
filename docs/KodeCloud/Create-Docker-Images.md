@@ -56,4 +56,5 @@ Both CMD and EntryPoint should be used hand in hand as follows. Note command and
 
 ## Resources
 https://devopscube.com/build-docker-image/
+https://phoenixnap.com/kb/docker-cmd-vs-entrypoint
 
