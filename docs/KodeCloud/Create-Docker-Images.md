@@ -52,7 +52,7 @@ Docker run on linux, even using Docker Desktop for Windows. Docker Desktop for W
 
 Both CMD and EntryPoint should be used hand in hand as follows. Note command and entrypoint should specify as json format e.g CMD ["sleep", "5"] :-
 
-![sc8](/docs/imgs/sc8.jpg)
+![sc8](/docs/imgs/sc8.JPG)
 
 ## Resources
 https://devopscube.com/build-docker-image/

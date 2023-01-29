@@ -38,7 +38,7 @@ Also learn about Docker Compose, Docker Swarm, and Kubernetes which will help ta
 =======
     - [Docker-For_Beginners](docs/KodeCloud/Docker-for-Beginners.pdf)
     - [Basic-Docker-Commands](docs/KodeCloud/Basic-Docker-Commands.md)
-    - [Create-Docker-Iamges](/docs/KodeCloud/Create-Docker-Images.md)
+    - [Create-Docker-Images](/docs/KodeCloud/Create-Docker-Images.md)
     - [Docker-Compose](/docs/KodeCloud/Docker-Compose.md)
     - [Docker-Engine-Docker-Storage-Networking](/docs/KodeCloud/Docker-Engine-Storage.md)
     - [Docker-Registry](/docs/KodeCloud/Docker-Registry.md)
