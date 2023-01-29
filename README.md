@@ -7,6 +7,10 @@ Also learn about Docker Compose, Docker Swarm, and Kubernetes which will help ta
 
 - [Code-Download](https://github.com/PacktPublishing/Mastering-Docker-Fourth-Edition)
 - [Code-In-Action](https://bit.ly/35aQnry)
+- [Private-Docker-Registry]
+  - [How-to-Setup-Article-1](https://phoenixnap.com/kb/set-up-a-private-docker-registry)
+  - [How-to-Setup-Article-2](https://www.baeldung.com/ops/docker-private-registry)
+- [Docker-Hub-Vs-Docker-Repo](https://jfrog.com/knowledge-base/docker-hub-and-docker-registries-a-beginners-guide/)
 
 # Sections
 
