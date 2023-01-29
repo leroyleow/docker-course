@@ -113,5 +113,5 @@ root@e8bb7249b843:/#
 ```
 
 ## Resources
-https://devopscube.com/build-docker-image/
-https://phoenixnap.com/kb/docker-cmd-vs-entrypoint
+* https://devopscube.com/build-docker-image/
+* https://phoenixnap.com/kb/docker-cmd-vs-entrypoint
