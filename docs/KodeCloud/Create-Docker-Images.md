@@ -24,10 +24,10 @@ ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 
 Build image 
 ```
-docker build Dockerfile -t leroyleow/my-custom-app -> build layered architecture
+docker build . -> build layered architecture
 <OR>
-docker build -t leroyleow/my-custom-app .
-docker push leroyleow/my-custom-app -> push image to docker hub
+docker build -t leroyleow/my-custom-app:latest . -> build for docker.io
+docker push leroyleow/my-custom-app:latest -> push image to docker hub
 ```
 ![sc5](/docs/imgs/sc5.JPG)
 

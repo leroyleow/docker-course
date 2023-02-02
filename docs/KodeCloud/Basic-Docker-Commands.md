@@ -69,6 +69,8 @@ docker image prune -a
 <b>IMAGES</b> - List Images
 ```
 docker images
+<OR>
+docker image ls
 ```
 
 <b>RMI</b> - Remove Images
