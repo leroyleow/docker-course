@@ -1,5 +1,12 @@
 # Building Container Images
 
+## Summary
+* How to create, build, run Dockerfile
+* Use an existing container
+* Use scratch as a base
+* Use ENV in Dockerfile
+* Use Multi-stage builds
+
 ## A DockerFile Example
 ```
 FROM alpine:latest
@@ -54,6 +61,7 @@ OR
 ENV <key>=<value>
 ENV username=admin
 ENV username=admin database=wordpress tableprefix=wp
+ENV PHPVERSION=7 [To change version, amend in the dockerfile]
 ```
 ## Dockerfile Best Practices
 * You should try to get into the habit of using a .dockerignore file. We will cover the .dockerignore file in the Building Docker images section of this chapter; it will seem very familiar if you are used to using a .gitignore file. It will essentially ignore the items you specified in the file during the build process.
@@ -72,8 +80,6 @@ docker build .
 [OR]
 <Note>
 docker image build == docker build
-[To build with ENV]
-docker build --tag local/apache-php:[ENV]
 ```
 
 ## Resource 
