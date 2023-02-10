@@ -99,3 +99,7 @@ doccker run ubuntu sleep 5
 ```
 docker exec <container_name> cat /etc/hosts
 ```
+to interact with docker container interactively
+```
+docker exec -it <container_id> /bin/bash
+```
