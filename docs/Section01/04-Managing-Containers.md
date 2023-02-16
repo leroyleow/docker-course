@@ -1,5 +1,13 @@
 # Managing Containers
 
+## Summary
+```
+$ docker container [command]
+$ docker network [command]
+$ docker volume [command]
+$ docker image [command]
+```
+
 ## Interacting with your containers
 
 So far, our containers have been running a single process. Docker provides you with a few tools that enable you to both fork additional processes and interact with them, and we will be covering those tools in the following sections:
@@ -99,3 +107,89 @@ $ docker container exec nginx-test cat /tmp/testing
 ```
 ![masterdocker9](/docs/imgs/masterdocker9.JPG)
 
+## Docker networking and volumes
+E.g. To run 2 container application; 1st container will run Redis and 2nd container is application which uses the Redis container to store a system state.
+```
+$ docker image pull redis:alpine
+$ docker image pull russmckendrick/moby-counter
+$ docker network create moby-counter
+```
+![masterdocker10](/docs/imgs/masterdocker10.JPG)
+
+```
+$ docker container run -d --name redis --network moby-counter redis:alpine
+$ docker container run -d --name moby-counter --network moby-counter -p 8080:80 russmckendrick/moby-counter
+```
+--network flg define the network that container was launched in. Note that we did not need to worry about exposing any ports of the Redis container. That is because the Redis image comes with some defaults that expose the default port, which is 6379 for us. This can be seen by running docker container ls:
+
+![masterdocker11](/docs/imgs/masterdocker11.JPG)
+
+Ping test to redis from moby-counter container
+```
+$ docker container exec moby-counter ping -c 3 redis
+```
+![masterdocker12](/docs/imgs/masterdocker12.JPG)
+From the above, the moby-counter resolves redis to the IP address of the redis container which is 172.18.0.2. You may be thinking that the application's host file contains an entry for the redis container; let's take a look using the following command:
+
+```
+$ docker container exec moby-counter cat /etc/hosts
+<return /etc/hosts>
+    127.0.0.1	localhost
+    ::1	localhost ip6-localhost ip6-loopback
+    fe00::0	ip6-localnet
+    ff00::0	ip6-mcastprefix
+    ff02::1	ip6-allnodes
+    ff02::2	ip6-allrouters
+    172.18.0.3	e7335ca1830d
+$ docker container exec moby-counter cat /etc/resolv.conf
+<return DNS server>
+nameserver 127.0.0.11
+options ndots:0
+$ docker container exec moby-counter nslookup redis 127.0.0.11
+<DNS return redis ip>
+    Server:    127.0.0.11
+    Address 1: 127.0.0.11
+    
+    Name:      redis
+    Address 1: 172.18.0.2 redis.moby-counter
+```
+> Note: we cannot have two containers with the same name, so let's creatively name it redis2. As our application is configured to connect to a container that resolves to redis does this mean we will have to make changes to our application container? No, Docker has you covered. There we create an container
+```
+$ docker network create moby-counter2
+$ docker run -itd --name moby-counter2 --network moby-counter2 -p 9090:80 russmckendrick/moby-counter
+$ docker container exec moby-counter2 ping -c 3 redis
+<above 3 lines will cause error>
+$ docker container run -d --name redis2 --network moby-counter2 --network-alias redis redis:alpine
+$ docker container exec moby-counter2 nslookup redis 127.0.0.1
+$ docker inspect moby-counter
+```
+On the last command, should see IPAM section and which containers are attached to this network.<b>IP address management (IPAM)</b> is a means of planning, tracking, and managing IP addresses within the network. IPAM has both DNS and DHCP services, each service is notified of changes in the other. For example, DHCP assigns an address to container2. The DNS service is then updated to return the IP address assigned by DHCP whenever a lookup is made against container2.
+
+Tear down 
+```
+$ docker container stop moby-counter2 redis2
+$ docker container prune
+$ docker network prune
+```
+
+## Docker volumes
+E.g. Create a volume and attach redis container to create persist data after stop and remove container. Persistent data is stored in /var/lib
+```
+$ docker volume create redis_data
+$ docker container run -d --name redis -v redis_data:/data --network moby-counter redis:alpine
+$ docker volume inspect redis_data
+<output>
+[
+    {
+        "CreatedAt": "2020-03-29T14:01:05Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/redis_data/_data",
+        "Name": "redis_data",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+<to view container stats>
+$ docker container stats redis
+```
